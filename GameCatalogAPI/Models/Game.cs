@@ -1,4 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿// Models/Game.cs
+
+
+using System.ComponentModel.DataAnnotations;
 
 namespace GameCatalogAPI.Models
 {
@@ -33,16 +36,16 @@ namespace GameCatalogAPI.Models
         /// <summary>
         /// Array of platforms, what can launch the game.
         /// </summary>
-        public ICollection<Platform>? Platforms { get; set; } = [];
+        public ICollection<Platform> Platforms { get; set; } = [];
 
         /// <summary>
         /// Array of game genres, what describes the game.
         /// </summary>
-        public ICollection<Genre>? Genres { get; set; } = [];
+        public ICollection<Genre> Genres { get; set; } = [];
 
         /// <summary>
         /// Array of game reviews from the observers.
         /// </summary>
-        public ICollection<Review>? Reviews { get; set; } = [];
+        public ICollection<Review> Reviews { get; set; } = [];
     }
 }

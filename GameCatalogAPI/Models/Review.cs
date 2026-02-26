@@ -1,4 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿// Models/Review.cs
+
+
+using System.ComponentModel.DataAnnotations;
 
 namespace GameCatalogAPI.Models
 {
@@ -24,6 +27,17 @@ namespace GameCatalogAPI.Models
         public int GameId { get; set; }
 
         /// <summary>
+        /// Text of review.
+        /// </summary>
+        [StringLength(1500)]
+        public string? Text { get; set; }
+
+        /// <summary>
+        /// Navibation atribute for EF Core.
+        /// </summary>
+        public required Game Game { get; set; }
+
+        /// <summary>
         /// Name of the author of review.
         /// </summary>
         [StringLength(35)]
@@ -33,6 +47,6 @@ namespace GameCatalogAPI.Models
         /// Date of review.
         /// </summary>
         [Range(typeof(DateTime), "01/01/1900", "31/12/2099", ErrorMessage = "Дата вне диапазона")]
-        public DateTime? DateReleased { get; set; } 
+        public DateTime? DateCreated { get; set; } 
     }
 }

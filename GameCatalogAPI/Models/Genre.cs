@@ -27,5 +27,10 @@ namespace GameCatalogAPI.Models
         [StringLength(500)]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// Collection of games of connection in EF Core.
+        /// </summary>
+        public ICollection<Game> Games { get; set; } = [];
+
     }
 }
